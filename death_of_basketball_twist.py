@@ -1,6 +1,7 @@
 import json
 import random
 year = 2019
+age = 0
 data = {
   "version": 33,
   "startingSeason": 2019,
@@ -10,7 +11,7 @@ players = []
 
 for x in range(30): #players
   teamid = x
-  print(year)
+  #print(year)
   for x in range(15):
     hgt = 0
     hgt = random.randint(0, 100)
@@ -87,7 +88,7 @@ for x in range(30): #players
 
 for x in range(50): #draft prospects
   year = 2018 + (x + 1)
-  print(year)
+  age = year - 19
   for x in range(71):
     hgt = 0
     hgt = random.randint(0, 100)
@@ -159,9 +160,11 @@ for x in range(50): #draft prospects
             "pss": pss,
             "reb": reb
           }
-        ],
-      "draft": {"year": year}
+      ],
+      "born": {"year": age},
+      "draft": {"year": year},
   })
+
 else:
   print("Finally finished!")
 with open('death_of_basketball.json', 'w') as outfile:
