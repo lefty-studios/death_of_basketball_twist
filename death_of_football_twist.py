@@ -71,20 +71,27 @@ for x in range(30): #players
 		elif focusStat == 2:
 			rns = 99
 		elif focusStat == 3:
-			pac = 99
+			hnd = 99
 	elif playerType == 3: #Rushing / Receiving
 		focusStat = 0
 		focusStat = random.randint(0, 3)
 		if focusStat == 0:
-			tck = 99
+			bsc = 99
 		elif focusStat == 1:
-			prs = 99
+			elu = 99
 		elif focusStat == 2:
-			rns = 99
+			rtr = 99
 		elif focusStat == 3:
 			pac = 99
 	elif playerType == 4: #kicker
-    
+    		focusStat = 0
+		focusStat = random.randint(0, 1)
+		if focusStat == 0:
+			kpw = 99
+			ppw = 99
+		elif focusStat == 1:
+			kac = 99
+			pac = 99
     data['players'].append({
  #     "firstName": "Draft",
  #     "lastName": "Prospect",
