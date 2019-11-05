@@ -9,17 +9,17 @@ data = {
 data['players'] = []
 players = []
 
-def createPlayers(number, type, pos, draft, teams):
+def createPlayers(number, type, pos, id, teams):
   print("Hello from a function")
   for x in range(teams): #players
-    if draft == -2:
-      teamid = -2
-    else:
+    if id == 0:
       teamid = x
+    else:
+      teamid = id  
     #print(year)
     for x in range(number):
       hgt = 0
-      hgt = random.randint(20, 75)
+      hgt = random.randint(10, 50)
       stre = 15
       spd = 15
       endu = 15
@@ -30,7 +30,7 @@ def createPlayers(number, type, pos, draft, teams):
       elu = 15
       rtr = 15
       hnd = 15
-      bk = 15
+      rbk = 15
       pbk = 15
       pcv = 15
       tck = 15
@@ -55,7 +55,7 @@ def createPlayers(number, type, pos, draft, teams):
         focusStat = 0
         focusStat = random.randint(0, 1)
         if focusStat == 0:
-          bk = 99
+          rbk = 99
           stre = 75
         elif focusStat == 1:
           pbk = 99
@@ -69,7 +69,8 @@ def createPlayers(number, type, pos, draft, teams):
           thp = 99
         elif focusStat == 2:
           tha = 99
-      elif playerType == 2:
+      #DL    
+      elif playerType == 2: 
         focusStat = 0
         focusStat = random.randint(0, 2)
         if focusStat == 0:
@@ -78,6 +79,7 @@ def createPlayers(number, type, pos, draft, teams):
           prs = 99
         elif focusStat == 2:
           rns = 99
+      #LB    
       elif playerType == 2.25:
         focusStat = 0
         focusStat = random.randint(0, 3)
@@ -89,21 +91,23 @@ def createPlayers(number, type, pos, draft, teams):
           rns = 99
         elif focusStat == 3:
           pac = 99    
+      #CB / S     
       elif playerType == 2.5:
         focusStat = 0
-        focusStat = random.randint(0, 3)
+        focusStat = random.randint(0, 2)
         if focusStat == 0:
           tck = 99
-          pac = 50  
+          pac = 35
+          prs = 35  
         elif focusStat == 1:
           prs = 99
-          pac = 50 
+          pac = 35 
+          tck = 35
         elif focusStat == 2:
-          rns = 99
-          pac = 50  
-        elif focusStat == 2:
-          pac = 99   
-          tck = 20 
+          pac = 99
+          prs = 35   
+          tck = 35
+      #RB    
       elif playerType == 3:
         focusStat = 0
         focusStat = random.randint(0, 2)
@@ -122,22 +126,30 @@ def createPlayers(number, type, pos, draft, teams):
           elu = 25
           stre = 25
           hnd = 25
-        elif focusStat == 3 and stre < 99:
-          stre = 30
+          bsc = 25
+      #WR / TE    
       elif playerType == 3.5:
         focusStat = 0
         focusStat = random.randint(0, 3)
         if focusStat == 0:
           bsc = 99
           rtr = 25
+          hnd = 25
         elif focusStat == 1:
           elu = 99
           rtr = 25
+          hnd = 25
+          bsc = 25
         elif focusStat == 2:
           rtr = 99
+          hnd = 25
+          bsc = 25
         elif focusStat == 3:
           hnd = 99
-          rtr = 25    
+          rtr = 25
+          bsc = 25
+          elu = 25  
+      #K / P      
       elif playerType == 4:
         focusStat = 0
         focusStat = random.randint(0, 1)
@@ -166,7 +178,7 @@ def createPlayers(number, type, pos, draft, teams):
               "elu": elu,
               "rtr": rtr,
               "hnd": hnd,
-              "bk": bk, 
+              "rbk": rbk, 
               "pbk": pbk,
               "pcv": pcv,
               "tck": tck,
@@ -184,13 +196,28 @@ createPlayers(8, 0, "OL", 0, 32)
 createPlayers(3, 1, "QB", 0, 32)
 createPlayers(4, 3, "RB", 0, 32)
 createPlayers(6, 3.5, "WR", 0, 32)
-createPlayers(2, 3, "TE", 0, 32)
+createPlayers(2, 3.5, "TE", 0, 32)
 createPlayers(8, 2, "DL", 0, 32)
 createPlayers(6, 2.25, "LB", 0, 32)
 createPlayers(5, 2.5, "CB", 0, 32)
 createPlayers(4, 2.5, "S", 0, 32)
 createPlayers(1, 4, "K", 0, 32)
 createPlayers(1, 4, "P", 0, 32)
+
+createPlayers(8, 0, "OL", -1, 2)
+createPlayers(3, 1, "QB", -1, 2)
+createPlayers(4, 3, "RB", -1, 2)
+createPlayers(6, 3.5, "WR", -1, 2)
+createPlayers(2, 3.5, "TE", -1, 2)
+createPlayers(8, 2, "DL", -1, 2)
+createPlayers(6, 2.25, "LB", -1, 2)
+createPlayers(5, 2.5, "CB", -1, 2)
+createPlayers(4, 2.5, "S", -1, 2)
+createPlayers(1, 4, "K", -1, 2)
+createPlayers(1, 4, "P", -1, 2)
+
+
+
 
 def createDraftPlayers(number, type, pos, draft, teams):
   print("Hello from a function")
@@ -201,7 +228,7 @@ def createDraftPlayers(number, type, pos, draft, teams):
     #print(year)
     for x in range(number):
       hgt = 0
-      hgt = random.randint(20, 75)
+      hgt = random.randint(10, 50)
       stre = 15
       spd = 15
       endu = 15
@@ -212,7 +239,7 @@ def createDraftPlayers(number, type, pos, draft, teams):
       elu = 15
       rtr = 15
       hnd = 15
-      bk = 15
+      rbk = 15
       pbk = 15
       pcv = 15
       tck = 15
@@ -237,7 +264,7 @@ def createDraftPlayers(number, type, pos, draft, teams):
         focusStat = 0
         focusStat = random.randint(0, 1)
         if focusStat == 0:
-          bk = 99
+          rbk = 99
           stre = 75
         elif focusStat == 1:
           pbk = 99
@@ -251,7 +278,8 @@ def createDraftPlayers(number, type, pos, draft, teams):
           thp = 99
         elif focusStat == 2:
           tha = 99
-      elif playerType == 2:
+      #DL    
+      elif playerType == 2: 
         focusStat = 0
         focusStat = random.randint(0, 2)
         if focusStat == 0:
@@ -260,6 +288,7 @@ def createDraftPlayers(number, type, pos, draft, teams):
           prs = 99
         elif focusStat == 2:
           rns = 99
+      #LB    
       elif playerType == 2.25:
         focusStat = 0
         focusStat = random.randint(0, 3)
@@ -271,21 +300,23 @@ def createDraftPlayers(number, type, pos, draft, teams):
           rns = 99
         elif focusStat == 3:
           pac = 99    
+      #CB / S     
       elif playerType == 2.5:
         focusStat = 0
-        focusStat = random.randint(0, 3)
+        focusStat = random.randint(0, 2)
         if focusStat == 0:
           tck = 99
-          pac = 50  
+          pac = 35
+          prs = 35  
         elif focusStat == 1:
           prs = 99
-          pac = 50 
+          pac = 35 
+          tck = 35
         elif focusStat == 2:
-          rns = 99
-          pac = 50  
-        elif focusStat == 2:
-          pac = 99   
-          tck = 20 
+          pac = 99
+          prs = 35   
+          tck = 35
+      #RB    
       elif playerType == 3:
         focusStat = 0
         focusStat = random.randint(0, 2)
@@ -305,6 +336,7 @@ def createDraftPlayers(number, type, pos, draft, teams):
           stre = 25
           hnd = 25
           bsc = 25
+      #WR / TE    
       elif playerType == 3.5:
         focusStat = 0
         focusStat = random.randint(0, 3)
@@ -316,9 +348,11 @@ def createDraftPlayers(number, type, pos, draft, teams):
           rtr = 25
         elif focusStat == 2:
           rtr = 99
+          hnd = 25
         elif focusStat == 3:
           hnd = 99
-          rtr = 25    
+          rtr = 25  
+      #K / P      
       elif playerType == 4:
         focusStat = 0
         focusStat = random.randint(0, 1)
@@ -349,7 +383,7 @@ def createDraftPlayers(number, type, pos, draft, teams):
               "elu": elu,
               "rtr": rtr,
               "hnd": hnd,
-              "bk": bk, 
+              "rbk": rbk, 
               "pbk": pbk,
               "pcv": pcv,
               "tck": tck,
@@ -367,7 +401,7 @@ createDraftPlayers(random.randint(10, 35), 0, "OL", 0, 32)
 createDraftPlayers(random.randint(10, 35), 1, "QB", 0, 32)
 createDraftPlayers(random.randint(10, 35), 3, "RB", 0, 32)
 createDraftPlayers(random.randint(10, 35), 3.5, "WR", 0, 32)
-createDraftPlayers(random.randint(10, 35), 3, "TE", 0, 32)
+createDraftPlayers(random.randint(10, 35), 3.5, "TE", 0, 32)
 createDraftPlayers(random.randint(10, 35), 2, "DL", 0, 32)
 createDraftPlayers(random.randint(10, 35), 2.25, "LB", 0, 32)
 createDraftPlayers(random.randint(10, 35), 2.5, "CB", 0, 32)
