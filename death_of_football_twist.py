@@ -20,65 +20,64 @@ def createPlayers(number, type, pos, id, teams):
     for x in range(number):
       hgt = 0
       hgt = random.randint(10, 50)
-      stre = 15
-      spd = 15
-      endu = 15
-      thv = 15
-      thp = 15
-      tha = 15
-      bsc = 15
-      elu = 15
-      rtr = 15
-      hnd = 15
-      rbk = 15
-      pbk = 15
-      pcv = 15
-      tck = 15
-      prs = 15
-      rns = 15
-      kpw = 15
-      kac = 15
-      ppw = 15
-      pac = 15
+      stre = 2
+      spd = 2
+      endu = 2
+      thv = 2
+      thp = 2
+      tha = 2
+      bsc = 2
+      elu = 2
+      rtr = 2
+      hnd = 2
+      rbk = 2
+      pbk = 2
+      pcv = 2
+      tck = 2
+      prs = 2
+      rns = 2
+      kpw = 2
+      kac = 2
+      ppw = 2
+      pac = 2
       playerType = type
-      statToChange = 0
-      statToChange = random.randint(0, 3)
-      if statToChange == 0:
-          stre = 99
-      elif statToChange == 1:
-          spd = 99
-      elif statToChange == 2:
-          endu = 99 
-      elif statToChange == 3:
-          spd = 99 
       if playerType == 0:
         focusStat = 0
         focusStat = random.randint(0, 1)
         if focusStat == 0:
           rbk = 99
-          stre = 75
+          stre = 15
         elif focusStat == 1:
           pbk = 99
-          stre = 75
+          stre = 15
       elif playerType == 1:
         focusStat = 0
         focusStat = random.randint(0, 2)
         if focusStat == 0:
           thv = 99
+          thp = 15
+          tha = 15
         elif focusStat == 1:
           thp = 99
+          tha = 15
+          thv = 15
         elif focusStat == 2:
           tha = 99
+          thp = 15
+          thv = 15
       #DL    
       elif playerType == 2: 
         focusStat = 0
         focusStat = random.randint(0, 2)
         if focusStat == 0:
           tck = 99
+          stre = 15
         elif focusStat == 1:
           prs = 99
+          stre = 15
         elif focusStat == 2:
           rns = 99
+          stre = 15
       #LB    
       elif playerType == 2.25:
         focusStat = 0
@@ -90,65 +89,38 @@ def createPlayers(number, type, pos, id, teams):
         elif focusStat == 2:
           rns = 99
         elif focusStat == 3:
-          pac = 99    
+          pcv = 99    
       #CB / S     
       elif playerType == 2.5:
-        focusStat = 0
-        focusStat = random.randint(0, 2)
-        if focusStat == 0:
-          tck = 99
-          pac = 35
-          prs = 35  
-        elif focusStat == 1:
-          prs = 99
-          pac = 35 
-          tck = 35
-        elif focusStat == 2:
-          pac = 99
-          prs = 35   
-          tck = 35
+        pcv = 99
+        spd = 15
+        hnd = 15 
       #RB    
       elif playerType == 3:
         focusStat = 0
         focusStat = random.randint(0, 2)
         if focusStat == 0:
           bsc = 99
-          stre = 25
-          elu = 25
-          hnd = 25
         elif focusStat == 1:
           elu = 99
-          stre = 25
-          hnd = 25
-          bsc = 25
         elif focusStat == 2:
-          hnd = 99
-          elu = 25
-          stre = 25
-          hnd = 25
-          bsc = 25
+          spd = 99 
       #WR / TE    
       elif playerType == 3.5:
         focusStat = 0
         focusStat = random.randint(0, 3)
         if focusStat == 0:
-          bsc = 99
+          spd = 99 
           rtr = 25
-          hnd = 25
         elif focusStat == 1:
           elu = 99
           rtr = 25
-          hnd = 25
-          bsc = 25
         elif focusStat == 2:
           rtr = 99
           hnd = 25
-          bsc = 25
         elif focusStat == 3:
           hnd = 99
-          rtr = 25
-          bsc = 25
-          elu = 25  
+          rtr = 25  
       #K / P      
       elif playerType == 4:
         focusStat = 0
@@ -229,46 +201,38 @@ def createDraftPlayers(number, type, pos, draft, teams):
     for x in range(number):
       hgt = 0
       hgt = random.randint(10, 50)
-      stre = 15
-      spd = 15
-      endu = 15
-      thv = 15
-      thp = 15
-      tha = 15
-      bsc = 15
-      elu = 15
-      rtr = 15
-      hnd = 15
-      rbk = 15
-      pbk = 15
-      pcv = 15
-      tck = 15
-      prs = 15
-      rns = 15
-      kpw = 15
-      kac = 15
-      ppw = 15
-      pac = 15
+      stre = 2
+      spd = 2
+      endu = 2
+      thv = 2
+      thp = 2
+      tha = 2
+      bsc = 2
+      elu = 2
+      rtr = 2
+      hnd = 2
+      rbk = 2
+      pbk = 2
+      pcv = 2
+      tck = 2
+      prs = 2
+      rns = 2
+      kpw = 2
+      kac = 2
+      ppw = 2
+      pac = 2
       playerType = type
       statToChange = 0
       statToChange = random.randint(0, 3)
-      if statToChange == 0:
-          stre = 99
-      elif statToChange == 1:
-          spd = 99
-      elif statToChange == 2:
-          endu = 99 
-      elif statToChange == 3:
-          spd = 99 
       if playerType == 0:
         focusStat = 0
         focusStat = random.randint(0, 1)
         if focusStat == 0:
           rbk = 99
-          stre = 75
+          stre = 15
         elif focusStat == 1:
           pbk = 99
-          stre = 75
+          stre = 15
       elif playerType == 1:
         focusStat = 0
         focusStat = random.randint(0, 2)
@@ -302,46 +266,23 @@ def createDraftPlayers(number, type, pos, draft, teams):
           pac = 99    
       #CB / S     
       elif playerType == 2.5:
-        focusStat = 0
-        focusStat = random.randint(0, 2)
-        if focusStat == 0:
-          tck = 99
-          pac = 35
-          prs = 35  
-        elif focusStat == 1:
-          prs = 99
-          pac = 35 
-          tck = 35
-        elif focusStat == 2:
-          pac = 99
-          prs = 35   
-          tck = 35
+        pac = 99
       #RB    
       elif playerType == 3:
         focusStat = 0
         focusStat = random.randint(0, 2)
         if focusStat == 0:
           bsc = 99
-          stre = 25
-          elu = 25
-          hnd = 25
         elif focusStat == 1:
           elu = 99
-          stre = 25
-          hnd = 25
-          bsc = 25
         elif focusStat == 2:
-          hnd = 99
-          elu = 25
-          stre = 25
-          hnd = 25
-          bsc = 25
+          spd = 99 
       #WR / TE    
       elif playerType == 3.5:
         focusStat = 0
         focusStat = random.randint(0, 3)
         if focusStat == 0:
-          bsc = 99
+          spd = 99 
           rtr = 25
         elif focusStat == 1:
           elu = 99
